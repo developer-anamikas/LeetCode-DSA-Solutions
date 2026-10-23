@@ -1,17 +1,13 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int k=0;
-        int n =nums.length;
-        int[] arr=new int[2];
-        for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
+        int n = nums.length;
+        for(int i = 0; i < n; i++){
+            for(int j = i + 1; j < n; j++){
                 if(target == nums[i] + nums[j]){
-                    arr[k++]=i;
-                    arr[k++]=j;
-                    return arr;
+                    return new int[] { i, j }; // Clean and no extra variables needed!
                 }
             }
         }
-        return arr;
+        return new int[] {}; // Required fallback return for the compiler
     }
 }
